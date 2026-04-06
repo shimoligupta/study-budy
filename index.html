@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Study Buddy</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <h2><i class="fas fa-robot"></i> AI Study Buddy</h2>
+    <div class="nav-right">
+      <ul>
+        <li><a href="#schedule"><i class="fas fa-calendar-alt"></i> Schedule</a></li>
+        <li><a href="#quiz"><i class="fas fa-question-circle"></i> Quiz Generator</a></li>
+        <li><a href="#progress"><i class="fas fa-chart-line"></i> Progress Tracker</a></li>
+        <li><a href="#doubt"><i class="fas fa-comments"></i> Doubt Solver</a></li>
+      </ul>
+      <button id="theme-toggle" class="theme-btn"><i class="fas fa-moon"></i></button>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Welcome to Your AI Study Buddy!</h1>
+      <p>Empower your learning journey with personalized tools for exams like JEE, GATE, UPSC, and more.</p>
+      <button onclick="scrollToSection('schedule')">Get Started</button>
+    </div>
+  </section>
+
+  <!-- Marquee -->
+  <marquee behavior="scroll" direction="left" class="marquee">
+    <i class="fas fa-rocket"></i> Students struggle with consistency, time management, and instant doubt-solving across exams (JEE, GATE, UPSC, Defence, CLAT, etc.)
+  </marquee>
+
+  <!-- Schedule -->
+  <section id="schedule" class="card">
+    <h2><i class="fas fa-calendar-alt"></i> Schedule</h2>
+    <p>Your AI-generated study timetable will appear here.</p>
+    <button onclick="showSchedule()"><i class="fas fa-magic"></i> Generate Schedule</button>
+    <div id="schedule-output" style="margin-top:1em;"></div>
+  </section>
+
+  <!-- Quiz Generator -->
+  <section id="quiz" class="card">
+    <h2><i class="fas fa-question-circle"></i> Quiz Generator</h2>
+    <p>Generate practice quizzes and mock tests instantly.</p>
+    <button onclick="showQuiz()"><i class="fas fa-play"></i> Start Quiz</button>
+    <form id="quiz-form" style="margin-top:1em; display:none;"></form>
+    <div id="quiz-result" style="margin-top:1em;"></div>
+  </section>
+
+  <!-- Progress Tracker -->
+  <section id="progress" class="card">
+    <h2><i class="fas fa-chart-line"></i> Progress Tracker</h2>
+    <p>Track your study performance and weak areas here.</p>
+    <button onclick="showProgress()"><i class="fas fa-eye"></i> View Progress</button>
+    <div id="progress-output" style="margin-top:1em;"></div>
+  </section>
+
+  <!-- Doubt Solver -->
+  <section id="doubt" class="card">
+    <h2><i class="fas fa-comments"></i> Doubt Solver</h2>
+    <div id="chatbox">
+      <div class="welcome-msg">Hi! I'm your AI Study Buddy. Ask me anything about your studies.</div>
+    </div>
+    <div class="chat-input">
+      <input type="text" id="doubtInput" placeholder="Ask your doubt...">
+      <button onclick="sendDoubt()"><i class="fas fa-paper-plane"></i></button>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p><i class="fas fa-heart"></i> © 2025 AI Study Buddy | Built By Team Learnable</p>
+  </footer>
+  
+
+  <script src="script.js"></script>
+  <script>
+  function scrollToSection(id) {
+    document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+  }
+  </script>
+</body>
+</html>
